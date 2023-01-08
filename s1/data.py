@@ -17,7 +17,7 @@ def mnist():
     test = np.load(r"E:\DTU\MLOPs\dtu_mlops\data\corruptmnist\test.npz")
     test_images = torch.tensor(test['images'])
     test_labels = torch.tensor(test['labels'])
-
+    print(train_images.shape)
     test_images = torch.flatten(test_images.to(torch.float32),start_dim=1)
     train_images = torch.flatten(train_images.to(torch.float32),start_dim=1)
     # print(test_images.shape)
@@ -30,4 +30,4 @@ def mnist():
     # test = torch.randn(10000, 784) 
     return train_set, test_set
 
-# mnist()
+mnist()
